@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widget_function/scrollable_sheet/scrollable_sheet.dart';
+import 'package:widget_function/refresh_page_with_dio/refresh_page_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const ScrollableSheetUse());
+        home: const RefreshPageView());
   }
 }

@@ -14,9 +14,9 @@ class _ScrollableSheetUseState extends State<ScrollableSheetUse> {
       appBar: AppBar(),
       body: SizedBox(
         child: DraggableScrollableSheet(
-          initialChildSize: 0.4,
-          minChildSize: 0.2,
-          maxChildSize: 0.6,
+          initialChildSize: 0.5,
+          minChildSize: 0.3,
+          maxChildSize: 0.7,
           builder: (BuildContext context, ScrollController scrollController) {
             return Container(
               decoration: BoxDecoration(
