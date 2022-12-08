@@ -1,17 +1,17 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:widget_function/refresh_page_with_dio/refresh_model.dart';
+import 'package:widget_function/firebase_api/firebase_model.dart';
 
-class RefreshPageView extends StatefulWidget {
-  const RefreshPageView({super.key});
+class FirebaseApiView extends StatefulWidget {
+  const FirebaseApiView({super.key});
 
   @override
-  State<RefreshPageView> createState() => _RefreshPageViewState();
+  State<FirebaseApiView> createState() => _FirebaseApiViewState();
 }
 
-class _RefreshPageViewState extends ProjectLoading<RefreshPageView> {
-  List<RefreshModel>? items;
-  Dio dio = Dio(BaseOptions(baseUrl: 'http://localhost:3000/'));
+class _FirebaseApiViewState extends ProjectLoading<FirebaseApiView> {
+  List<FirebaseModel>? items;
+  Dio dio = Dio(BaseOptions(baseUrl: 'https://rtr-rrtrt-r-default-rtdb.firebaseio.com/'));
   @override
   void initState() {
     super.initState();
@@ -19,13 +19,13 @@ class _RefreshPageViewState extends ProjectLoading<RefreshPageView> {
     WidgetsBinding.instance.addPostFrameCallback((_) => _refreshIndicatorKey.currentState?.show());
   }
 
-  Future<List<RefreshModel>?> fetchItemFromApi() async {
+  Future<List<FirebaseModel>?> fetchItemFromApi() async {
     changeWaitValue();
-    final response = await dio.get('users');
+    final response = await dio.get('users.json');
     if (response.statusCode == 200) {
       final userData = response.data;
       if (userData is List) {
-        items = userData.map((e) => RefreshModel.fromJson(e)).toList();
+        items = userData.map((e) => FirebaseModel.fromJson(e)).toList();
       }
     }
     changeWaitValue();
