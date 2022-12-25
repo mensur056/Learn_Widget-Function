@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'firebase_api/firebase_api_view.dart';
+import 'package:widget_function/is_first_run/if_first_run_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,7 +8,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,6 +16,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const FirebaseApiView());
+        home: const IsFirtRunView());
   }
 }
