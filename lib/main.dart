@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widget_function/is_first_run/if_first_run_view.dart';
+import 'package:widget_function/dartio_web_use/view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +16,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const IsFirtRunView());
+        home: const DartIoAndWebHtmlView());
   }
 }
