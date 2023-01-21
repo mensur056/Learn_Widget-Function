@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:widget_function/dartio_web_use/global_getter.dart';
+import 'package:widget_function/2.)dartio_web_use/global_getter.dart';
 
 PLatformShow get createAdapter => DartIoUse();
 
