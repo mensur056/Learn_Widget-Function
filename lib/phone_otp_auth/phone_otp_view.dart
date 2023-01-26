@@ -1,5 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:widget_function/phone_otp_auth/apply_code_view.dart';
+
+//     implementation 'com.google.firebase:firebase-auth' add to build gradle of app
+// this project open in android studio for to know SHA1 and SHA256 then to add to firebase project
 
 class PhoneOTPAuthView extends StatefulWidget {
   const PhoneOTPAuthView({super.key});
@@ -32,9 +36,6 @@ class _PhoneOTPAuthViewState extends State<PhoneOTPAuthView> {
               height: 20,
             ),
             TextField(
-              onChanged: (value) {
-                phone = value;
-              },
               keyboardType: TextInputType.phone,
               controller: numberController,
             ),
@@ -43,8 +44,13 @@ class _PhoneOTPAuthViewState extends State<PhoneOTPAuthView> {
             ),
             ElevatedButton(
                 onPressed: () async {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) {
+                      return const ApplyCodeView();
+                    },
+                  ));
                   await FirebaseAuth.instance.verifyPhoneNumber(
-                    phoneNumber: numberController.text + phone,
+                    phoneNumber: numberController.text,
                     verificationCompleted: (PhoneAuthCredential credential) {},
                     verificationFailed: (FirebaseAuthException e) {},
                     codeSent: (String erificationId, int? forceResendingToken) {},
