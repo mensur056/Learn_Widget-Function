@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1037750001821",
+    "project_id": "phone-send-otp",
+    "storage_bucket": "phone-send-otp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037750001821:android:f18c74cce16a262807f474",
+        "android_client_info": {
+          "package_name": "com.example.widget_function"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037750001821-ql86l1h8p2eurfor2qqbphrhhot9amp0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS2mm4LfgTMXklDp8KOBsngCA5SXHOS0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037750001821-ql86l1h8p2eurfor2qqbphrhhot9amp0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

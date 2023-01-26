@@ -46,6 +46,9 @@ dependencies:
   mobx_codegen: ^2.1.1
   build_runner: ^2.3.3
   provider: ^6.0.5
+  pinput: ^2.2.23
+  firebase_core: ^2.4.1
+  firebase_auth: ^4.2.2
 
 dev_dependencies:
   flutter_test:

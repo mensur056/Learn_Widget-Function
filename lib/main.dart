@@ -1,10 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:widget_function/mobx_using/viewmodel/mobx_view_model.dart';
+import 'package:widget_function/phone_otp_auth/phone_otp_view.dart';
 
-import 'mobx_using/mobx_view.dart';
-
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -14,11 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Observer(
-      builder: (_) => MaterialApp(
+      builder: (_) => const MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
-          theme: viewmodel.isDarkTheme ? ThemeData.light() : ThemeData.dark(),
-          home: const TaskView()),
+          // theme: viewmodel.isDarkTheme ? ThemeData.light() : ThemeData.dark(),
+          home: PhoneOTPAuthView()),
     );
   }
 }
