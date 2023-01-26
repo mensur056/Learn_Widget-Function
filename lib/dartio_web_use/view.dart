@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:widget_function/2.)dartio_web_use/dart_io.dart'
+import 'package:widget_function/dartio_web_use/dart_io.dart'
     if (dart.library.html) 'package:widget_function/dartio_web_use/web_io.dart' as show;
-import 'package:widget_function/2.)dartio_web_use/global_getter.dart';
+import 'package:widget_function/dartio_web_use/global_getter.dart';
 
 class DartIoAndWebHtmlView extends StatefulWidget {
   const DartIoAndWebHtmlView({super.key});

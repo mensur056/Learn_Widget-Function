@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:widget_function/1.)change_hexcolor_api/color_model.dart';
+import 'package:widget_function/change_hexcolor_api/color_model.dart';
 
 class ChangeColorView extends StatefulWidget {
   const ChangeColorView({super.key});
