@@ -14,7 +14,6 @@ class PhoneOTPAuthView extends StatefulWidget {
 
 class _PhoneOTPAuthViewState extends State<PhoneOTPAuthView> {
   TextEditingController numberController = TextEditingController();
-  String phone = '';
   @override
   void initState() {
     super.initState();
@@ -43,21 +42,22 @@ class _PhoneOTPAuthViewState extends State<PhoneOTPAuthView> {
               height: 20,
             ),
             ElevatedButton(
-                onPressed: () async {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) {
-                      return const ApplyCodeView();
-                    },
-                  ));
-                  await FirebaseAuth.instance.verifyPhoneNumber(
-                    phoneNumber: numberController.text,
-                    verificationCompleted: (PhoneAuthCredential credential) {},
-                    verificationFailed: (FirebaseAuthException e) {},
-                    codeSent: (String erificationId, int? forceResendingToken) {},
-                    codeAutoRetrievalTimeout: (String verificationId) {},
-                  );
-                },
-                child: const Text('Send the code'))
+              onPressed: () async {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) {
+                    return const ApplyCodeView();
+                  },
+                ));
+                await FirebaseAuth.instance.verifyPhoneNumber(
+                  phoneNumber: numberController.text,
+                  verificationCompleted: (PhoneAuthCredential credential) {},
+                  verificationFailed: (FirebaseAuthException e) {},
+                  codeSent: (String erificationId, int? forceResendingToken) {},
+                  codeAutoRetrievalTimeout: (String verificationId) {},
+                );
+              },
+              child: const Text('Send the code'),
+            )
           ],
         ),
       ),
