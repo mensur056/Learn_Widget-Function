@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:widget_function/phone_otp_auth/apply_code_view.dart';
 
 //     implementation 'com.google.firebase:firebase-auth' add to build gradle of app
+// open gradlew file in terminal then to write ./gradlew signingReport
 // this project open in android studio for to know SHA1 and SHA256 then to add to firebase project
+
 
 class PhoneOTPAuthView extends StatefulWidget {
   const PhoneOTPAuthView({super.key});
