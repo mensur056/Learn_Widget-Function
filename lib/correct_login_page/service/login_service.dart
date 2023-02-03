@@ -23,7 +23,6 @@ class GeneralService implements IService {
     final response = await dio.post(firebaseUrl, data: jsonModel);
     if (response.statusCode == HttpStatus.ok) {
       statusCode = response.statusCode;
-      print(response.data);
       return response.data;
     } else {
       return;
