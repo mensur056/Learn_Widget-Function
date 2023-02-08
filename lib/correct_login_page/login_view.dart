@@ -37,20 +37,26 @@ class _LoginPageViewState extends State<LoginPageView> {
           ),
           ElevatedButton(
               onPressed: () async {
-                await service.postLogin(
-                    UserModel(email: emailController.text, password: passwordController.text, returnSecureToken: true));
-                if (service.statusCode == 200) {
-                  print('sdfsdf');
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) {
-                      return const HomePage();
-                    },
-                  ));
-                } else {
-                  print('Sorry');
-                }
+                final model = UserModel2(email: emailController.text, password: passwordController.text);
+                await service.apiLoginFirebase(model);
               },
-              child: const Text('Login')),
+              child: const Text('Login In')),
+          // ElevatedButton(
+          //     onPressed: () async {
+          //       await service.postLogin(
+          //           UserModel(email: emailController.text, password: passwordController.text, returnSecureToken: true));
+          //       if (service.statusCode == 200) {
+          //         print('sdfsdf');
+          //         Navigator.of(context).push(MaterialPageRoute(
+          //           builder: (context) {
+          //             return const HomePage();
+          //           },
+          //         ));
+          //       } else {
+          //         print('Sorry');
+          //       }
+          //     },
+          //     child: const Text('Login')),
           ElevatedButton(
               onPressed: () async {
                 await service.postSignUp(

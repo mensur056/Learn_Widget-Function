@@ -9,6 +9,7 @@ abstract class IService {
   int? statusCode;
   Future<void> postLogin(UserModel model);
   Future<void> postSignUp(UserModel model);
+  Future<void> apiLoginFirebase(UserModel2 model);
 }
 
 class GeneralService implements IService {
@@ -39,4 +40,15 @@ class GeneralService implements IService {
 
   @override
   int? statusCode;
+
+  @override
+  Future<void> apiLoginFirebase(UserModel2 model) async {
+    final response = await dio.post('https://shopping-app-2238d-default-rtdb.firebaseio.com/users.json', data: model);
+    if (response.statusCode == 200) {
+      Map jsonData = jsonDecode(response.data);
+      if (jsonData['email'] == model.email) {
+        return;
+      }
+    }
+  }
 }
