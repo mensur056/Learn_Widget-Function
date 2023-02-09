@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'dart:math' as math show Random;
+import 'package:widget_function/mehmet_%C3%A7anacak/bloc_lesson/project2/names_cubit.dart';
 
 class BlocProject2Page extends StatefulWidget {
   const BlocProject2Page({super.key});
@@ -12,7 +12,37 @@ class BlocProject2Page extends StatefulWidget {
 class _BlocProject2PageState extends State<BlocProject2Page> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return BlocProvider<NameCubit>(
+      create: (context) => NameCubit(),
+      child: const Project2View(),
+    );
+  }
+}
+
+class Project2View extends StatelessWidget {
+  const Project2View({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: BlocBuilder<NameCubit, String?>(
+        builder: (context, state) {
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(state ?? 'Test'),
+                ElevatedButton(
+                    onPressed: () {
+                      context.read<NameCubit>().getRandomName();
+                    },
+                    child: const Text('Fetch User'))
+              ],
+            ),
+          );
+        },
+      ),
+    );
   }
 }
 
@@ -25,15 +55,3 @@ const Iterable<String> userList = [
   "mehmet",
   "elekber",
 ];
-
-extension RandomElement<T> on Iterable<T> {
-  T getRandomElement() => elementAt(math.Random().nextInt(length));
-}
-
-class NameCubit extends Cubit<String?> {
-  NameCubit() : super(null);
-
-  void getRandomName() {
-    emit(state);
-  }
-}
