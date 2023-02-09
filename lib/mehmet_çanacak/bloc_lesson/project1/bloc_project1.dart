@@ -26,9 +26,32 @@ class Project1View extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              context.read<CounterCubit>().increment();
+            },
+            child: const Icon(Icons.add),
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              context.read<CounterCubit>().decrement();
+            },
+            child: const Icon(Icons.remove),
+          ),
+        ],
+      ),
       appBar: AppBar(),
-      body: Center(
-        child: Text(context.watch<CounterCubit>().state.toString()),
+      body: BlocBuilder<CounterCubit, int>(
+        builder: (context, state) {
+          return Center(
+            child: Text(
+              state.toString(),
+            ),
+          );
+        },
       ),
     );
   }

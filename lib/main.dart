@@ -29,11 +29,12 @@ class MyApp extends StatelessWidget {
       child: AuthWidgetBuilder(
         onPageBuilder: (context, AsyncSnapshot<FirebaseUserModel?> snapshot) {
           return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              title: 'Flutter Demo',
-              home: AuthWidgets(
-                snapshot: snapshot,
-              ));
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            home: AuthWidgets(
+              snapshot: snapshot,
+            ),
+          );
         },
       ),
     );
