@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'project1/bloc_project1.dart';
+import 'project2/bloc_project2.dart';
 
 class BlocMyApp extends StatelessWidget {
   const BlocMyApp({super.key});
@@ -9,7 +9,7 @@ class BlocMyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BlocProject1Page(),
+      home: BlocProject2Page(),
     );
   }
 }
