@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:widget_function/firebase_api/firebase_api_view.dart';
+import 'package:widget_function/mehmet_%C3%A7anacak/firebase_auth/service/model/firebase_user_model.dart';
 import 'package:widget_function/mehmet_%C3%A7anacak/firebase_auth/service/service.dart';
 import 'package:widget_function/mobx_using/viewmodel/mobx_view_model.dart';
 
+import 'mehmet_çanacak/bloc_lesson/bloc_main.dart';
 import 'mehmet_çanacak/firebase_auth/service/general_service.dart';
+import 'mehmet_çanacak/firebase_auth/view/widgets/auth_widget.dart';
+import 'mehmet_çanacak/firebase_auth/view/widgets/auth_widgets_builder.dart';
 
 void main() {
-  runApp(MyApp());
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
+  runApp(const BlocMyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,11 +26,16 @@ class MyApp extends StatelessWidget {
           create: (_) => FirebaseGeneralService(),
         )
       ],
-      child: const MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          // theme: viewmodel.isDarkTheme ? ThemeData.light() : ThemeData.dark(),
-          home: FirebaseApiView()),
+      child: AuthWidgetBuilder(
+        onPageBuilder: (context, AsyncSnapshot<FirebaseUserModel?> snapshot) {
+          return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: 'Flutter Demo',
+              home: AuthWidgets(
+                snapshot: snapshot,
+              ));
+        },
+      ),
     );
   }
 }
