@@ -45,7 +45,7 @@ class HomeView extends StatelessWidget {
               iconData: Icons.arrow_back_ios_new,
               selectedValue: selectedTab,
               value: HomeTab.page3,
-            )
+            ),
           ],
         ),
       ),

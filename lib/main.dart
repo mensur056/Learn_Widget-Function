@@ -1,10 +1,12 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:widget_function/language_localization/core/constants.dart';
 import 'package:widget_function/mehmet_%C3%A7anacak/firebase_auth/service/model/firebase_user_model.dart';
 import 'package:widget_function/mehmet_%C3%A7anacak/firebase_auth/service/service.dart';
 import 'package:widget_function/mobx_using/viewmodel/mobx_view_model.dart';
 
-import 'mehmet_çanacak/bloc/main.dart';
+import 'language_localization/main.dart';
 import 'mehmet_çanacak/firebase_auth/service/general_service.dart';
 import 'mehmet_çanacak/firebase_auth/view/widgets/auth_widget.dart';
 import 'mehmet_çanacak/firebase_auth/view/widgets/auth_widgets_builder.dart';
@@ -12,7 +14,10 @@ import 'mehmet_çanacak/firebase_auth/view/widgets/auth_widgets_builder.dart';
 void main() {
   // WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
-  runApp(const BlocMyApp2());
+  runApp(EasyLocalization(
+      path: AppConstants.localPath,
+      supportedLocales: const [AppConstants.trLocale],
+      child: const LanguageLocalizationMyApp()));
 }
 
 class MyApp extends StatelessWidget {
