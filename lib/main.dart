@@ -4,7 +4,7 @@ import 'package:widget_function/mehmet_%C3%A7anacak/firebase_auth/service/model/
 import 'package:widget_function/mehmet_%C3%A7anacak/firebase_auth/service/service.dart';
 import 'package:widget_function/mobx_using/viewmodel/mobx_view_model.dart';
 
-import 'mehmet_çanacak/bloc_lesson/bloc_main.dart';
+import 'mehmet_çanacak/bloc/main.dart';
 import 'mehmet_çanacak/firebase_auth/service/general_service.dart';
 import 'mehmet_çanacak/firebase_auth/view/widgets/auth_widget.dart';
 import 'mehmet_çanacak/firebase_auth/view/widgets/auth_widgets_builder.dart';
@@ -12,7 +12,7 @@ import 'mehmet_çanacak/firebase_auth/view/widgets/auth_widgets_builder.dart';
 void main() {
   // WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
-  runApp(const BlocMyApp());
+  runApp(const BlocMyApp2());
 }
 
 class MyApp extends StatelessWidget {

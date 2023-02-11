@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:widget_function/mehmet_%C3%A7anacak/bloc_lesson/project2/names_cubit.dart';
+import 'package:widget_function/mehmet_%C3%A7anacak/bloc_cubit_lesson/project2/names_cubit.dart';
 
 class BlocProject2Page extends StatefulWidget {
   const BlocProject2Page({super.key});

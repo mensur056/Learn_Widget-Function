@@ -56,6 +56,7 @@ dependencies:
   mobx: ^2.1.3
   provider: ^6.0.5
   flutter_mobx: ^2.0.6+5
+  equatable: ^2.0.5
 
 
 
