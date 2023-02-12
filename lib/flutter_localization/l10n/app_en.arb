@@ -1,4 +1,7 @@
 {
-    "homePage":"This is English",
-    "button":"You can change app language"
+    "homePage":"English Home Page",
+    "name":"Your name",
+    "surname":"Your surname",
+    "age":"Your age"
+
 }

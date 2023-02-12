@@ -1,4 +1,6 @@
 {
-    "homePage":"Bu Turkdur",
-    "button":"Proqramdilini degise bilirsin"
+    "homePage":"Turkiye Ana Sayfasi",
+    "name":"Senin adin ne",
+    "surname":"Senin soyadin ne",
+    "age":"Senin yasin kac"
 }

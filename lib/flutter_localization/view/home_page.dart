@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widget_function/flutter_localization/core/language_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LocalizationHomePage extends StatefulWidget {
   const LocalizationHomePage({super.key});
@@ -13,6 +14,8 @@ class _LocalizationHomePageState extends State<LocalizationHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        title: Text(AppLocalizations.of(context)!.homePage),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8),
@@ -43,7 +46,26 @@ class _LocalizationHomePageState extends State<LocalizationHomePage> {
           )
         ],
       ),
-      body: Column(),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              AppLocalizations.of(context)!.name,
+              style: const TextStyle(color: Colors.black, fontSize: 20),
+            ),
+            Text(
+              AppLocalizations.of(context)!.surname,
+              style: const TextStyle(color: Colors.black, fontSize: 20),
+            ),
+            Text(
+              AppLocalizations.of(context)!.age,
+              style: const TextStyle(color: Colors.black, fontSize: 20),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

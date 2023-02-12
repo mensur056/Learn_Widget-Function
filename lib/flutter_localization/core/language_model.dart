@@ -8,6 +8,7 @@ class LanguageModel {
     return <LanguageModel>[
       LanguageModel(id: 1, languageCode: 'en', name: 'English'),
       LanguageModel(id: 2, languageCode: 'tr', name: 'Turkhis'),
+      LanguageModel(id: 3, languageCode: 'az', name: 'Azerbaijan'),
     ];
   }
 }
