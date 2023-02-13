@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:widget_function/flutter_localization/core/language_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../main.dart';
+
 class LocalizationHomePage extends StatefulWidget {
   const LocalizationHomePage({super.key});
 
@@ -20,7 +22,11 @@ class _LocalizationHomePageState extends State<LocalizationHomePage> {
           Padding(
             padding: const EdgeInsets.all(8),
             child: DropdownButton(
-                onChanged: (value) {},
+                onChanged: (LanguageModel? languageModel) {
+                  if (languageModel != null) {
+                    LocalizationMyApp.setLocale(context, Locale(languageModel.languageCode));
+                  }
+                },
                 underline: const SizedBox(),
                 icon: const Icon(
                   Icons.language,
