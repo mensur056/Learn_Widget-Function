@@ -32,9 +32,9 @@ class _RefreshPageViewState extends ProjectLoading<RefreshPageView> {
     return null;
   }
 
-  bool? deleteItem(int id) {
-    final response = dio.delete('users/$id');
-    return null;
+  Future<void> deleteItem(int id) async {
+    final response = await dio.delete('users/$id');
+    return response.data;
   }
 
   bool checkBox = false;
