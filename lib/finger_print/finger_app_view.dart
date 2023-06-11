@@ -64,7 +64,8 @@ class FingerPrintAppViewState extends State<FingerPrintAppView> {
     bool authenticated = false;
     try {
       authenticated = await auth.authenticate(
-        options: const AuthenticationOptions(stickyAuth: false, useErrorDialogs: true, sensitiveTransaction: true),
+        options: const AuthenticationOptions(
+            stickyAuth: false, useErrorDialogs: true, sensitiveTransaction: true),
         localizedReason: "Scan your finger print to authenticate",
       );
     } on PlatformException catch (e) {
@@ -79,7 +80,7 @@ class FingerPrintAppViewState extends State<FingerPrintAppView> {
 
   @override
   void initState() {
-    // TODO: implement initState
+    super.initState();
     _checkBiometric();
     _getAvailableBiometrics();
   }

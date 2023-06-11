@@ -32,9 +32,9 @@ class _FirebaseApiViewState extends ProjectLoading<FirebaseApiView> {
     return null;
   }
 
-  bool? deleteItem(int id) {
-    final response = dio.delete('users/$id');
-    return null;
+  Future<void> deleteItem(int id) async {
+    final response = await dio.delete('users/$id');
+    return response.data;
   }
 
   bool checkBox = false;
@@ -94,7 +94,6 @@ class _FirebaseApiViewState extends ProjectLoading<FirebaseApiView> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            print("object");
             const AlertDialog(
               title: Text("dad"),
               actions: [
