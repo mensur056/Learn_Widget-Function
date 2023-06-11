@@ -47,6 +47,11 @@ class _TimerViewState extends State<TimerView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          child: const Text('data'),
+          onPressed: () {
+            startTimer();
+          }),
       appBar: AppBar(title: const Text("Timer test")),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

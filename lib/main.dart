@@ -3,15 +3,15 @@ import 'package:provider/provider.dart';
 import 'package:widget_function/mehmet_%C3%A7anacak/firebase_auth/service/model/firebase_user_model.dart';
 import 'package:widget_function/mehmet_%C3%A7anacak/firebase_auth/service/service.dart';
 import 'package:widget_function/mobx_using/viewmodel/mobx_view_model.dart';
+import 'package:widget_function/timer_with_progress/timer_with_progress.dart';
+import 'package:widget_function/video_player/player_main.dart';
 
-import 'flutter_localization/main.dart';
 import 'mehmet_çanacak/firebase_auth/service/general_service.dart';
-import 'mehmet_çanacak/firebase_auth/view/widgets/auth_widget.dart';
 import 'mehmet_çanacak/firebase_auth/view/widgets/auth_widgets_builder.dart';
 
 void main() async {
   // await Firebase.initializeApp();
-  runApp(const LocalizationMyApp());
+  runApp(const MyAppVideoPlayer());
 }
 
 class MyApp extends StatelessWidget {
@@ -27,12 +27,10 @@ class MyApp extends StatelessWidget {
       ],
       child: AuthWidgetBuilder(
         onPageBuilder: (context, AsyncSnapshot<FirebaseUserModel?> snapshot) {
-          return MaterialApp(
+          return const MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
-            home: AuthWidgets(
-              snapshot: snapshot,
-            ),
+            home: TimerView(),
           );
         },
       ),
