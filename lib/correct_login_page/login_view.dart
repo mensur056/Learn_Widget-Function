@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:widget_function/correct_login_page/home_page.dart';
 import 'package:widget_function/correct_login_page/service/login_service.dart';
 import 'package:widget_function/correct_login_page/service/model/user_model.dart';
 
@@ -37,7 +36,8 @@ class _LoginPageViewState extends State<LoginPageView> {
           ),
           ElevatedButton(
               onPressed: () async {
-                final model = UserModel2(email: emailController.text, password: passwordController.text);
+                final model =
+                    UserModel2(email: emailController.text, password: passwordController.text);
                 await service.apiLoginFirebase(model);
               },
               child: const Text('Login In')),
@@ -59,8 +59,10 @@ class _LoginPageViewState extends State<LoginPageView> {
           //     child: const Text('Login')),
           ElevatedButton(
               onPressed: () async {
-                await service.postSignUp(
-                    UserModel(email: emailController.text, password: passwordController.text, returnSecureToken: true));
+                await service.postSignUp(UserModel(
+                    email: emailController.text,
+                    password: passwordController.text,
+                    returnSecureToken: true));
               },
               child: const Text('Register'))
         ],
