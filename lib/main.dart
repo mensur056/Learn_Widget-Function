@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'todo_app/to_do_main.dart';
 
-void main() {
+Future<void> main() async {
   // await Firebase.initializeApp();
   runApp(const MyToDoApp());
 }
