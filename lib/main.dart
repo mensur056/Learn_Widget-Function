@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'todo_app/to_do_main.dart';
+import 'internet_connection/interner_main.dart';
 
-Future<void> main() async {
+void main() {
   // await Firebase.initializeApp();
-  runApp(const MyToDoApp());
+  runApp(const InternetMain());
 }
 
 // class MyApp extends StatelessWidget {
